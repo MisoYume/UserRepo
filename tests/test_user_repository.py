@@ -13,7 +13,7 @@ class TestUserRepository(unittest.TestCase):
         """
         Подготовка перед КАЖДЫМ тестом
         """
-        self.engine = create_engine("postgresql://postgres:postgres@localhost:5432/test_db")
+        self.engine = create_engine("postgresql://postgres:postgres@localhost:5432/user_repo")
         Base.metadata.drop_all(bind=self.engine)
         Base.metadata.create_all(bind=self.engine)
         self.SessionLocal = sessionmaker(bind=self.engine)
